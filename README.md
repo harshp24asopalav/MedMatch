@@ -1,6 +1,6 @@
 # MedMatch
 Team Members:
-Harsh
-Vishv
-Riddhi
+Harsh,
+Vishv,
+Riddhi,
 Tavleen
