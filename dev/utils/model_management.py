@@ -1,5 +1,4 @@
 import os
-# dev/utils/model_management.py
 def train_model_function(data_id, model_type):
     # Here we would load the data, preprocess it, and train the model
     # For example purposes, we'll assume this is the function content
@@ -17,7 +16,6 @@ def train_model_function(data_id, model_type):
     
     return {'message': 'Model training initiated', 'model_path': model_path}
 
-# dev/utils/model_management.py
 def evaluate_model_function(model_id, validation_data_id):
     # Load the model and validation data
     model_path = os.path.join('..', 'trained-models', f'{model_id}.pkl')

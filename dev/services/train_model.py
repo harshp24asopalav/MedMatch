@@ -1,6 +1,5 @@
-# dev/services/train_model.py
 from flask import request, jsonify
-from utils.model_management import train_model_function
+from dev.utils.model_management import train_model_function
 
 def train_model():
     data_id = request.json.get('trainingDataId')

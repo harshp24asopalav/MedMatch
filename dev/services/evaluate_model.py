@@ -1,6 +1,5 @@
-# dev/services/evaluate_model.py
 from flask import request, jsonify
-from utils.model_management import evaluate_model_function
+from dev.utils.model_management import evaluate_model_function
 
 def evaluate_model():
     model_id = request.json.get('modelId')
