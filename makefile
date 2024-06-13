@@ -1,33 +1,37 @@
 # Define variables
 VENV := venv
-REQ := requirements.txt
+UNAME_S := $(shell python -c "import platform; print(platform.system())")
 
-.PHONY: all create_venv install_deps activate run clean
+# Determine the Python and pip executable paths based on the OS
+ifeq ($(UNAME_S),Linux)
+	PYTHON := $(VENV)/bin/python
+	PIP := $(VENV)/bin/pip
+else ifeq ($(UNAME_S),Darwin)
+	PYTHON := $(VENV)/bin/python
+	PIP := $(VENV)/bin/pip
+else
+	PYTHON := $(VENV)/Scripts/python
+	PIP := $(VENV)/Scripts/pip
+endif
 
-# Default target
-all: create_venv install_deps
+# Targets
 
-# Create virtual environment
-create_venv:
-	@echo "Creating virtual environment..."
-	@python -m venv $(VENV)
+.PHONY: all setup run clean
 
-# Install dependencies
-install_deps: create_venv
+all: setup run
+
+setup:
+	@echo "Setting up virtual environment..."
+	python -m venv $(VENV)
 	@echo "Installing dependencies..."
-	@$(VENV)/Scripts/pip install -r $(REQ) || $(VENV)/bin/pip install -r $(REQ)
+	$(PIP) install -r requirements.txt
 
-# Activate virtual environment
-activate:
-	@echo "Activating virtual environment..."
-	@$(VENV)/Scripts/activate || source $(VENV)/bin/activate
-
-# Run the application
 run:
-	@echo "Running the application..."
-	@$(VENV)/Scripts/python app.py || $(VENV)/bin/python app.py
+	@echo "Running Flask server..."
+	$(PYTHON) app.py
 
-# Clean the virtual environment
 clean:
 	@echo "Cleaning up..."
-	@rm -rf $(VENV)
+	rm -rf $(VENV)
+	find . -type d -name "__pycache__" -exec rm -r {} +
+

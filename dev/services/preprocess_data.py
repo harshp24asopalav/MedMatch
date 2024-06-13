@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 from flask import request, jsonify
-from utils.data_processing import preprocess_data_function
+from dev.utils.data_processing import preprocess_data_function
 
 def preprocess_data():
     raw_data_id = request.json.get('rawDataId')
