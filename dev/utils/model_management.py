@@ -4,7 +4,7 @@ from dev.models.evaluate import evaluate_model
 
 def train_model_function(data_id, model_type):
     
-    data_path = os.path.join('data-collection', 'raw-data', f'{data_id}.csv')
+    data_path = os.path.join('data-collection', 'clean-data', f'{data_id}.csv')
     model_path = os.path.join('trained-models')
     
     # Train the model

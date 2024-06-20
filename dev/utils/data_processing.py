@@ -56,13 +56,9 @@ def preprocess_data_function(raw_data_id):
     with open(scaler_path, 'wb') as file:
         pickle.dump(h_scaler, file)
 
-    # Split data into training and test sets
-    from sklearn.model_selection import train_test_split
-    X_scaled_train, X_scaled_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.25, random_state=44, shuffle=True)
-
     # Save cleaned data
-    df_clean = pd.DataFrame(X_scaled_train, columns=X.columns)
-    df_clean['DEATH_EVENT'] = y_train.values
+    df_clean = pd.DataFrame(X_scaled, columns=X.columns)
+    df_clean['DEATH_EVENT'] = y.values
     df_clean.to_csv(clean_data_path, index=False)
     
     return {'message': 'Data preprocessed successfully', 'cleanDataPath': clean_data_path, 'scalerPath': scaler_path}, 200
