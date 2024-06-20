@@ -4,3 +4,6 @@ Harsh,
 Vishv,
 Riddhi,
 Tavleen
+
+
+Use Makefile to install and setup the repo
