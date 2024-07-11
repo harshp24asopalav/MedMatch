@@ -1,0 +1,22 @@
+# latest versions as of 2023-05-17
+matplotlib==3.7.1  # visualizations
+seaborn==0.12.2  # visualizations
+plotly==5.14.1  # visualizations
+scikit-learn==1.3.0 # ML library
+pandas==2.0.1  # data structures library
+pillow==9.5.0  # image processing and display library
+nbformat==5.8.0  # Jupyter notebook format, required for Plotly in VS Code
+nbconvert==7.4.0  # Jupyter notebook conversion, required for converting notebooks to HTML, PDF, etc.
+ipykernel==6.23.1  # kernel for Jupyter notebooks
+numpy==1.23.5
+scipy==1.14.0
+xgboost==2.1.0
+imbalanced-learn==0.12.3
+keras==2.12.0
+streamlit==1.36.0
+flask==3.0.3
+tensorflow-cpu==2.12.0
+tensorflow-datasets==4.9.2
+tensorflow-io-gcs-filesystem==0.31.0
+tensorflow-metadata==1.15.0
+opencv-python==4.9.0.80
