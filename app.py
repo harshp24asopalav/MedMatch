@@ -13,6 +13,8 @@ from diabetes import Diabetes
 from heart_failure import HeartFailure
 from kidney_disease import KidneyDisease
 from lung_cancer import LungCancer
+from QAChatbot import QAChatbot
+from Cal_Pred import CaloriePrediction
 
 
 bt = BrainTumor(use_pretrained=True)
@@ -21,6 +23,8 @@ di = Diabetes(use_pretrained=True)
 hf = HeartFailure(use_pretrained=True)
 kd = KidneyDisease(use_pretrained=True)
 lc = LungCancer(use_pretrained=True)
+cb = QAChatbot()
+cp = CaloriePrediction(use_pretrained=True)
 
 app = Flask(__name__)
 
@@ -38,7 +42,7 @@ def handle_is_tumor():
         # Handle potential image errors (e.g., invalid format)  
         try:
             image_bytes = image_file.read()
-            # Process image using your ML model (replace with actual logic)
+            # Process image using your ML model 
             is_tumor_result = bt.predict(image_bytes)
             return jsonify({'is_tumor': is_tumor_result})
         except Exception as e:
@@ -172,6 +176,51 @@ def predict_lung_cancer():
             os.remove(temp_file_path)  # Remove the file after prediction
         
         return jsonify({'predicted_class': int(prediction[0])})
+
+
+@app.route('/api/get_answer', methods=['POST'])
+def get_answer():
+    if request.method == 'POST':
+        data = request.get_json(force=True)  # Get JSON data from the request
+        if 'question' not in data:
+            return jsonify({'error': 'Missing question data'}), 400
+
+        question = data['question']
+        try:
+            answers = cb.find_closest_answers(question)
+            # Format the output to only include answers without scores
+            formatted_answers = [answer for answer, _ in answers]
+            return jsonify({'answers': formatted_answers})
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500
+
+    return jsonify({'error': 'Method not allowed'}), 405
+
+
+
+@app.route('/api/calorie_maintenance', methods=['POST'])
+def handle_calorie_maintenance():
+    if request.method == 'POST':
+        if not request.json:
+            return jsonify({'error': 'No JSON data received'}), 400
+
+        input_data = request.json
+        
+        # Ensure input data matches the required format
+        expected_features = [
+            'age', 'weight(kg)', 'height(m)', 'gender', 'BMI', 'BMR', 'activity_level'
+        ]
+        
+        for feature in expected_features:
+            if feature not in input_data:
+                return jsonify({'error': f'Missing feature: {feature}'}), 400
+        
+        # Call the predict function with the input data
+        calorie_maintenance_level = cp.predict(input_data)
+        
+        return jsonify({'Calorie Maintenance Level': calorie_maintenance_level[0]})
+
+    return jsonify({'error': 'Method not allowed'}), 405
 
 
 if __name__ == '__main__':
