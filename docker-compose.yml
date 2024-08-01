@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vishv0987/medmatch:v3
+    ports:
+      - "5000:5000"  # Port for Flask
+      - "8501:8501"  # Port for Streamlit
+      - "7802:5000"  # Map host port 7802 to container port 5000 for Flask
+      - "7812:8501"  # Map host port 7812 to container port 8501 for Streamlit
+    environment:
+      # Brain Tumor specific variables
+      BT_MODEL: ${BT_MODEL}
+      BT_EPOCHS: ${BT_EPOCHS}
+      BT_TEST_SIZE: ${BT_TEST_SIZE}
+      BT_RANDOM_STATE: ${BT_RANDOM_STATE}
+      
+      # Heart Failure specific variables
+      HF_MODEL: ${HF_MODEL}
+      HF_TEST_SIZE: ${HF_TEST_SIZE}
+      HF_RANDOM_STATE: ${HF_RANDOM_STATE}
+      HF_N_ESTIMATORS: ${HF_N_ESTIMATORS}
+      HF_MAX_DEPTH: ${HF_MAX_DEPTH}
+      HF_CRITERION: ${HF_CRITERION}
+      
+      # Kidney Disease specific variables
+      KD_MODEL: ${KD_MODEL}
+      KD_TEST_SIZE: ${KD_TEST_SIZE}
+      KD_RANDOM_STATE: ${KD_RANDOM_STATE}
+      KD_N_ESTIMATORS: ${KD_N_ESTIMATORS}
+      
+      # Lung Cancer specific variables
+      LC_MODEL: ${LC_MODEL}
+      LC_EPOCHS: ${LC_EPOCHS}
+      LC_OPTIMIZER: ${LC_OPTIMIZER}
+      LC_LOSS_FUNCTION: ${LC_LOSS_FUNCTION}
+    volumes:
+      - .:/app  # Maps the current directory to the /app directory in the container
+

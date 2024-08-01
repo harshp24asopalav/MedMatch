@@ -1,13 +1,23 @@
 import pandas as pd
+import os
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from tensorflow import keras
 import pickle
 from sklearn.metrics import accuracy_score
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class KidneyDisease:
     def __init__(self, use_pretrained = True) -> None:
+
+        self.kd_model_path = os.getenv('KD_MODEL', './trained-model/kd_version_1.pkl')
+        self.kd_test_size = float(os.getenv('KD_TEST_SIZE', '0.2'))
+        self.kd_random_state = int(os.getenv('KD_RANDOM_STATE', '42'))
+        self.kd_n_estimators = int(os.getenv('KD_N_ESTIMATORS', '100'))
+
         if use_pretrained:
             print("Loading model...")
             #self.model = keras.models.load_model("./trained-model/kd_version_1.pkl")
@@ -33,10 +43,10 @@ class KidneyDisease:
         self.scaler = StandardScaler()
         X = self.scaler.fit_transform(X)"""
         
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, test_size=self.kd_test_size, random_state=self.kd_random_state)
 
     def model(self):
-        rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+        rf_classifier = RandomForestClassifier(n_estimators=self.kd_n_estimators, random_state=42)
         self.rf_classifier = rf_classifier
 
     def train_model(self):
@@ -48,7 +58,7 @@ class KidneyDisease:
             pickle.dump(self.rf_classifier, file)
 
     def load_model(self):
-        filename = './trained-model/kd_version_1.pkl'
+        filename = self.kd_model_path
         with open(filename, 'rb') as file:
             self.rf_classifier = pickle.load(file)
 

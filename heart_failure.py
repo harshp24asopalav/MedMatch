@@ -4,11 +4,26 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import pickle
+import os
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class HeartFailure:
     def __init__(self, use_pretrained=True):
+
+        # TODO
+        self.hf_model_path = os.getenv('HF_MODEL', './trained-model/hf_version_1.pkl')
+        self.hf_test_size = float(os.getenv('HF_TEST_SIZE', '0.25'))
+        self.hf_random_state = int(os.getenv('HF_RANDOM_STATE', '44'))
+        self.hf_n_estimators = int(os.getenv('HF_N_ESTIMATORS', '10'))
+        self.hf_max_depth = int(os.getenv('HF_MAX_DEPTH', '8'))
+        self.hf_criterion = os.getenv('HF_CRITERION', 'gini')
+
+
+
         if use_pretrained:
             print("Loading model...")
             self.load_model()
@@ -29,10 +44,13 @@ class HeartFailure:
         y = self.df['DEATH_EVENT']
 
         # Splitting the data
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, test_size=0.25, random_state=44, shuffle=True)
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, test_size=self.hf_test_size, random_state=self.hf_random_state, shuffle=True)
 
     def model(self):
-        rf_model = RandomForestClassifier(n_estimators=10, max_depth=8, criterion='gini', random_state=0)
+        rf_model = RandomForestClassifier(n_estimators=self.hf_n_estimators, 
+                                          max_depth=self.hf_max_depth, 
+                                          criterion=self.hf_criterion, 
+                                          random_state=0)
         self.rf_model = rf_model
 
     def train_model(self):
@@ -44,7 +62,7 @@ class HeartFailure:
             pickle.dump(self.rf_model, file)
 
     def load_model(self):
-        filename = './trained-model/hf_version_1.pkl'
+        filename = self.hf_model_path
         with open(filename, 'rb') as file:
             self.rf_model = pickle.load(file)
 

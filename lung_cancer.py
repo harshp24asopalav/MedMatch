@@ -9,11 +9,23 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications.resnet import preprocess_input
 import matplotlib.pyplot as plt
 from PIL import Image
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class LungCancer:
     def __init__(self, use_pretrained=True):
+
+        # TODO
+        self.lc_model_path = os.getenv('LC_MODEL', './trained-model/lc_version_1.h5')
+        self.lc_epochs = int(os.getenv('LC_EPOCHS', '100'))
+        self.lc_optimizer = os.getenv('LC_OPTIMIZER', 'adam')
+        self.lc_loss_function = os.getenv('LC_LOSS_FUNCTION', 'categorical_crossentropy')
+
+
+
         if use_pretrained:
-            self.model = tf.keras.models.load_model("./trained-model/lc_version_1.h5")
+            self.model = tf.keras.models.load_model(self.lc_model_path)
         else:
             self.load_data()
             self.build_model()
@@ -96,7 +108,7 @@ class LungCancer:
         self.model.summary()
 
         self.model.compile(
-            optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy']
+            optimizer=self.lc_optimizer, loss=self.lc_loss_function, metrics=['accuracy']
         )
 
     def train_model(self):
@@ -107,7 +119,7 @@ class LungCancer:
         self.history = self.model.fit(
             self.train_data,
             validation_data=self.val_data,
-            epochs=100,
+            epochs=self.lc_epochs,
             verbose=1,
             callbacks=callbacks
         )

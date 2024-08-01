@@ -9,12 +9,23 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D,MaxPooling2D, Dense,Flatten, Dropout
 from tensorflow import keras
+from dotenv import load_dotenv
 
+load_dotenv()
 
 class BrainTumor:
     def __init__(self, use_pretrained = True) -> None:
+
+        # TODO
+        self.bt_model_path = os.getenv('BT_MODEL', './trained-model/tumor_version_1.h5')
+        self.bt_epochs = int(os.getenv('BT_EPOCHS', '50'))
+        self.bt_test_size = float(os.getenv('BT_TEST_SIZE', '0.2'))
+        self.bt_random_state = int(os.getenv('BT_RANDOM_STATE', '101'))
+
+
+
         if use_pretrained:
-            self.model = keras.models.load_model("./trained-model/tumor_version_1.h5")
+            self.model = keras.models.load_model(self.bt_model_path)
         else:
             self.load_data()
             self.process_data()
@@ -58,7 +69,7 @@ class BrainTumor:
         Y=np.array(self.labels)
 
         # Splitting data
-        X_train,X_test,Y_train,Y_test=train_test_split(X,Y, test_size=0.2, random_state=101)
+        X_train,X_test,Y_train,Y_test=train_test_split(X,Y, test_size=self.bt_test_size, random_state=self.bt_random_state)
 
         # Scaling data
         self.X_train=X_train/255
@@ -79,7 +90,7 @@ class BrainTumor:
     
 
     def train_model(self):
-        self.model.fit(self.X_train,self.Y_train, epochs=50, validation_split=0.1, verbose=1)
+        self.model.fit(self.X_train,self.Y_train, epochs=self.bt_epochs, validation_split=0.1, verbose=1)
     
     def save_model(self):
         self.model.save(f'./trained-model/tumor_version_1.h5')

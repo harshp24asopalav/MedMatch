@@ -26,7 +26,7 @@ class QAChatbot:
             self.answer_embeddings = self.model.encode(self.df['answer'].tolist(), convert_to_tensor=False)
             np.save('answer_embeddings.npy', self.answer_embeddings)
 
-    def find_closest_answers(self, query, top_k=5):
+    def find_closest_answers(self, query, top_k=1):
         # Encode the query to the same space as your answers
         query_embedding = self.model.encode([query], convert_to_tensor=False)  # Ensure output is not a tensor
 
