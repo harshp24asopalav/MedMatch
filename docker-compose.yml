@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: vishv0987/medmatch:v3
+    image: vishv0987/medmatch:v4
     ports:
       - "5000:5000"  # Port for Flask
       - "8501:8501"  # Port for Streamlit
@@ -17,6 +17,8 @@ services:
       BT_EPOCHS: ${BT_EPOCHS}
       BT_TEST_SIZE: ${BT_TEST_SIZE}
       BT_RANDOM_STATE: ${BT_RANDOM_STATE}
+      BT_OPTIMIZER: ${BT_OPTIMIZER}
+      BT_LOSS_FUNCTION: ${BT_LOSS_FUNCTION}
       
       # Heart Failure specific variables
       HF_MODEL: ${HF_MODEL}

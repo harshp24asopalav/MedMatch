@@ -1,5 +1,5 @@
 import pandas as pd
-import os
+import os, logging
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -9,6 +9,17 @@ from sklearn.metrics import accuracy_score
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Configure logging to save logs to a file
+log_file_path = os.path.join('logs', 'kd_logs.log')
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename=log_file_path,
+    filemode='a'  # Append to the log file
+)
 
 class KidneyDisease:
     def __init__(self, use_pretrained = True) -> None:
@@ -38,10 +49,6 @@ class KidneyDisease:
     def process_data(self):
         X = self.df.drop(columns=['Class'])
         y = self.df['Class']
-
-        """# Standardize the features
-        self.scaler = StandardScaler()
-        X = self.scaler.fit_transform(X)"""
         
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, test_size=self.kd_test_size, random_state=self.kd_random_state)
 
@@ -56,11 +63,13 @@ class KidneyDisease:
         filename = './trained-model/kd_version_1.pkl'
         with open(filename, 'wb') as file:
             pickle.dump(self.rf_classifier, file)
+        logging.info("Model saved successfully.")
 
     def load_model(self):
         filename = self.kd_model_path
         with open(filename, 'rb') as file:
             self.rf_classifier = pickle.load(file)
+        logging.info("Model loaded successfully.")
 
     def evaluate(self):
         # Make predictions on the test set
@@ -77,8 +86,9 @@ class KidneyDisease:
         prediction = self.rf_classifier.predict(features_df)
         return bool(prediction[0])
 
+#kd = KidneyDisease(use_pretrained=False)
 # Test Model
-"""kd = KidneyDisease(use_pretrained=True)
+"""kd = KidneyDisease(use_pretrained=False)
 input_data = {
         "Bp":80.0,
         "Sg":1.020,

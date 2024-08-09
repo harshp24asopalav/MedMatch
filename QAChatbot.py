@@ -45,7 +45,3 @@ class QAChatbot:
         for answer, _ in closest_answers:
             print(f"* {answer}\n")
 
-"""if __name__ == "__main__":
-    chatbot = QAChatbot()
-    query = input("Enter your question: ")
-    chatbot.display_answers(query)"""

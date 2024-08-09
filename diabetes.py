@@ -7,9 +7,20 @@ from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import SMOTE
 import pickle
 import warnings
+import os, logging
 warnings.filterwarnings("ignore")
-#from tensorflow import keras
 
+
+# Configure logging to save logs to a file
+log_file_path = os.path.join('logs', 'di_logs.log')
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename=log_file_path,
+    filemode='a'  # Append to the log file
+)
 
 class Diabetes:
     def __init__(self, use_pretrained = True) -> None:
@@ -57,11 +68,13 @@ class Diabetes:
         filename = './trained-model/di_version_1.pkl'
         with open(filename, 'wb') as file:
             pickle.dump(self.xgb_model, file)
+        logging.info("Model saved successfully.")
 
     def load_model(self):
         filename = './trained-model/di_version_1.pkl'
         with open(filename, 'rb') as file:
             self.xgb_model = pickle.load(file)
+        logging.info("Model loaded successfully.")
 
     def evaluate(self):
         # Make predictions on the test set

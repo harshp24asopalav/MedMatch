@@ -224,5 +224,6 @@ def handle_calorie_maintenance():
 
 
 if __name__ == '__main__':
+    
     #import random  # For simulation purposes
     app.run(debug=True)

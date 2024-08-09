@@ -4,12 +4,23 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import pickle
-import os
+import os, logging
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Configure logging to save logs to a file
+log_file_path = os.path.join('logs', 'hf_logs.log')
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename=log_file_path,
+    filemode='a'  # Append to the log file
+)
 
 class HeartFailure:
     def __init__(self, use_pretrained=True):
@@ -21,8 +32,6 @@ class HeartFailure:
         self.hf_n_estimators = int(os.getenv('HF_N_ESTIMATORS', '10'))
         self.hf_max_depth = int(os.getenv('HF_MAX_DEPTH', '8'))
         self.hf_criterion = os.getenv('HF_CRITERION', 'gini')
-
-
 
         if use_pretrained:
             print("Loading model...")
@@ -60,11 +69,13 @@ class HeartFailure:
         filename = './trained-model/hf_version_1.pkl'
         with open(filename, 'wb') as file:
             pickle.dump(self.rf_model, file)
+        logging.info("Model saved successfully.")
 
     def load_model(self):
         filename = self.hf_model_path
         with open(filename, 'rb') as file:
             self.rf_model = pickle.load(file)
+        logging.info("Model loaded successfully.")
 
     def evaluate(self):
         # Make predictions on the test set

@@ -1,0 +1,21 @@
+2024-08-09 11:34:52,656 - INFO - Model saved successfully.
+2024-08-09 11:34:52,680 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 11:34:52,680 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-09 11:34:52,688 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 11:34:54,077 - INFO - Model saved successfully.
+2024-08-09 11:34:54,086 - WARNING -  * Debugger is active!
+2024-08-09 11:34:54,086 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 11:35:07,897 - INFO - API call: /load_data
+2024-08-09 11:35:07,907 - INFO - 127.0.0.1 - - [09/Aug/2024 11:35:07] "POST /hf/load_data HTTP/1.1" 200 -
+2024-08-09 11:35:16,027 - INFO - API call: /process_data
+2024-08-09 11:35:16,027 - INFO - 127.0.0.1 - - [09/Aug/2024 11:35:16] "POST /hf/process_data HTTP/1.1" 200 -
+2024-08-09 11:35:24,718 - INFO - API call: /build_model
+2024-08-09 11:35:24,718 - INFO - 127.0.0.1 - - [09/Aug/2024 11:35:24] "POST /hf/model HTTP/1.1" 200 -
+2024-08-09 11:35:31,327 - INFO - API call: /train_model
+2024-08-09 11:35:31,343 - INFO - 127.0.0.1 - - [09/Aug/2024 11:35:31] "POST /hf/train_model HTTP/1.1" 200 -
+2024-08-09 11:35:38,392 - INFO - API call: /save_model
+2024-08-09 11:35:38,394 - INFO - Model saved successfully.
+2024-08-09 11:35:38,395 - INFO - 127.0.0.1 - - [09/Aug/2024 11:35:38] "POST /hf/save_model HTTP/1.1" 200 -
+2024-08-09 11:35:44,409 - INFO - API call: /evaluate
+2024-08-09 11:35:44,417 - INFO - 127.0.0.1 - - [09/Aug/2024 11:35:44] "POST /hf/evaluate HTTP/1.1" 200 -

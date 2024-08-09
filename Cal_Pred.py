@@ -7,6 +7,18 @@ from sklearn.metrics import mean_squared_error
 import pickle
 import warnings
 warnings.filterwarnings("ignore")
+import os, logging
+
+# Configure logging to save logs to a file
+log_file_path = os.path.join('logs', 'cp_logs.log')
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename=log_file_path,
+    filemode='a'  # Append to the log file
+)
 
 class CaloriePrediction:
     def __init__(self, use_pretrained=True) -> None:
@@ -47,12 +59,14 @@ class CaloriePrediction:
         filename = './trained-model/cal_version_1.pkl'
         with open(filename, 'wb') as file:
             pickle.dump(self.rf_model, file)
+        logging.info("Model saved successfully.")
     
     def load_model(self):
         # Load the RandomForest model
         filename = './trained-model/cal_version_1.pkl'
         with open(filename, 'rb') as file:
             self.rf_model = pickle.load(file)
+        logging.info("Model loaded successfully.")
 
     def evaluate_model(self):
         # Make predictions and evaluate the model

@@ -1,0 +1,21 @@
+2024-08-09 11:29:24,516 - INFO - Model saved successfully.
+2024-08-09 11:29:24,540 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 11:29:24,540 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-09 11:29:24,548 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 11:29:29,220 - INFO - Model saved successfully.
+2024-08-09 11:29:29,230 - WARNING -  * Debugger is active!
+2024-08-09 11:29:29,232 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 11:29:39,480 - INFO - API call: /load_data
+2024-08-09 11:29:39,480 - INFO - 127.0.0.1 - - [09/Aug/2024 11:29:39] "POST /kd/load_data HTTP/1.1" 200 -
+2024-08-09 11:29:50,446 - INFO - API call: /process_data
+2024-08-09 11:29:50,448 - INFO - 127.0.0.1 - - [09/Aug/2024 11:29:50] "POST /kd/process_data HTTP/1.1" 200 -
+2024-08-09 11:29:58,963 - INFO - API call: /model
+2024-08-09 11:29:58,964 - INFO - 127.0.0.1 - - [09/Aug/2024 11:29:58] "POST /kd/model HTTP/1.1" 200 -
+2024-08-09 11:30:07,409 - INFO - API call: /train_model
+2024-08-09 11:30:07,528 - INFO - 127.0.0.1 - - [09/Aug/2024 11:30:07] "POST /kd/train_model HTTP/1.1" 200 -
+2024-08-09 11:30:17,517 - INFO - API call: /evaluate
+2024-08-09 11:30:17,527 - INFO - 127.0.0.1 - - [09/Aug/2024 11:30:17] "POST /kd/evaluate HTTP/1.1" 200 -
+2024-08-09 11:30:34,964 - INFO - API call: /save_model
+2024-08-09 11:30:34,972 - INFO - Model saved successfully.
+2024-08-09 11:30:34,972 - INFO - 127.0.0.1 - - [09/Aug/2024 11:30:34] "POST /kd/save_model HTTP/1.1" 200 -

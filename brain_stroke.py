@@ -7,6 +7,18 @@ from sklearn.metrics import accuracy_score
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.utils import resample
 import pickle
+import logging, os
+
+# Configure logging to save logs to a file
+log_file_path = os.path.join('logs', 'bs_logs.log')
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename=log_file_path,
+    filemode='a'  # Append to the log file
+)
 
 class BrainStroke:
     def __init__(self, use_pretrained=True):
@@ -42,11 +54,7 @@ class BrainStroke:
         dums = pd.get_dummies(upsampled_data[cols], dtype=int)
         self.model_data = pd.concat([upsampled_data, dums], axis=1).drop(columns=cols)
 
-        """self.scaler = MinMaxScaler()
-        for col in ['age', 'avg_glucose_level', 'bmi']:
-            self.scaler.fit(self.model_data[[col]])
-            self.model_data[col] = self.scaler.transform(self.model_data[[col]])
-"""
+        
         X = self.model_data.drop(columns="stroke")
         y = self.model_data["stroke"]
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, test_size=0.2, random_state=7, shuffle=True)
@@ -61,11 +69,13 @@ class BrainStroke:
         filename = './trained-model/bs_version_1.pkl'
         with open(filename, 'wb') as file:
             pickle.dump(self.etc_model, file)
+        logging.info("Model saved successfully.")
 
     def load_model(self):
         filename = './trained-model/bs_version_1.pkl'
         with open(filename, 'rb') as file:
             self.etc_model = pickle.load(file)
+        logging.info("Model loaded successfully.")
 
     def evaluate(self):
         # Make predictions on the test set
@@ -77,19 +87,7 @@ class BrainStroke:
 
     def predict(self, features):
         features_df = pd.DataFrame([features])
-        #self.scaler = MinMaxScaler()
-        """for col in ['age', 'avg_glucose_level', 'bmi']:
-            self.scaler.fit(features_df[[col]])
-            features_df[col] = self.scaler.transform(features_df[[col]])
-"""
-        # if use_pretrained = false
-        """# Ensure all required columns are present in the input data
-        expected_columns = self.model_data.columns
-        features_df = features_df.reindex(columns=expected_columns, fill_value=0)
-
-        # Drop the target column 'stroke' for prediction
-        X_predict = features_df.drop(columns=['stroke'])"""
-
+    
         prediction = self.etc_model.predict(features_df)
         return bool(prediction[0])
 
