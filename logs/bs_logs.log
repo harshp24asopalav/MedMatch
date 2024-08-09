@@ -226,3 +226,27 @@
 2024-08-09 17:16:36,842 - INFO - 127.0.0.1 - - [09/Aug/2024 17:16:36] "POST /api/is_heart HTTP/1.1" 200 -
 2024-08-09 17:16:46,509 - INFO - 127.0.0.1 - - [09/Aug/2024 17:16:46] "POST /api/get_answer HTTP/1.1" 200 -
 2024-08-09 17:16:52,125 - INFO - 127.0.0.1 - - [09/Aug/2024 17:16:52] "POST /api/calorie_maintenance HTTP/1.1" 200 -
+2024-08-09 15:11:26,036 - INFO - Model loaded successfully.
+2024-08-09 15:11:34,095 - INFO - Model loaded successfully.
+2024-08-09 15:11:34,168 - INFO - Model loaded successfully.
+2024-08-09 15:11:34,208 - INFO - Model loaded successfully.
+2024-08-09 15:11:39,858 - INFO - Use pytorch device_name: cpu
+2024-08-09 15:11:39,858 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 15:11:57,329 - INFO - Model loaded successfully.
+2024-08-09 15:11:58,292 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 15:11:58,292 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-09 15:11:58,542 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 15:13:19,969 - INFO - Model loaded successfully.
+2024-08-09 15:13:20,026 - INFO - Model loaded successfully.
+2024-08-09 15:13:20,051 - INFO - Model loaded successfully.
+2024-08-09 15:13:20,068 - INFO - Model loaded successfully.
+2024-08-09 15:13:32,298 - INFO - Use pytorch device_name: cpu
+2024-08-09 15:13:32,298 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 15:13:41,049 - INFO - Model loaded successfully.
+2024-08-09 15:13:41,297 - WARNING -  * Debugger is active!
+2024-08-09 15:13:41,314 - INFO -  * Debugger PIN: 103-595-274
+2024-08-09 15:13:59,562 - INFO - 127.0.0.1 - - [09/Aug/2024 15:13:59] "POST /api/calorie_maintenance HTTP/1.1" 200 -
+2024-08-09 15:15:51,701 - INFO -  * Detected change in 'f:\\AAIML\\MedMatch\\QAChatbot.py', reloading
+2024-08-09 15:15:51,701 - INFO -  * Detected change in 'f:\\AAIML\\MedMatch\\QAChatbot.py', reloading
+2024-08-09 15:15:51,701 - INFO -  * Detected change in 'f:\\AAIML\\MedMatch\\QAChatbot.py', reloading
