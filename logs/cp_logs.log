@@ -1,0 +1,26 @@
+2024-08-09 11:51:28,433 - INFO - Model saved successfully.
+2024-08-09 11:51:28,506 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 11:51:28,507 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-09 11:51:28,513 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 11:51:36,982 - INFO - Model saved successfully.
+2024-08-09 11:51:37,066 - WARNING -  * Debugger is active!
+2024-08-09 11:51:37,071 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 11:51:37,168 - INFO - API call: /load_data
+2024-08-09 11:51:37,196 - INFO - 127.0.0.1 - - [09/Aug/2024 11:51:37] "POST /cal/load_data HTTP/1.1" 200 -
+2024-08-09 11:51:44,405 - INFO - API call: /preprocess_data
+2024-08-09 11:51:44,405 - INFO - 127.0.0.1 - - [09/Aug/2024 11:51:44] "POST /cal/preprocess_data HTTP/1.1" 200 -
+2024-08-09 11:51:54,316 - INFO - API call: /split_data
+2024-08-09 11:51:54,318 - INFO - 127.0.0.1 - - [09/Aug/2024 11:51:54] "POST /cal/split_data HTTP/1.1" 200 -
+2024-08-09 11:52:01,846 - INFO - API call: /train_model
+2024-08-09 11:52:11,325 - INFO - 127.0.0.1 - - [09/Aug/2024 11:52:11] "POST /cal/train_model HTTP/1.1" 200 -
+2024-08-09 11:52:19,524 - INFO - API call: /save_model
+2024-08-09 11:52:19,703 - INFO - Model saved successfully.
+2024-08-09 11:52:19,703 - INFO - 127.0.0.1 - - [09/Aug/2024 11:52:19] "POST /cal/save_model HTTP/1.1" 200 -
+2024-08-09 11:52:24,121 - INFO - API call: /evaluate_model
+2024-08-09 11:52:24,210 - INFO - 127.0.0.1 - - [09/Aug/2024 11:52:24] "POST /cal/evaluate_model HTTP/1.1" 200 -
+2024-08-09 11:52:29,471 - INFO -  * Detected change in 'c:\\Users\\vishv\\OneDrive\\Documents\\AIML_2\\Project\\cal_pred_app.py', reloading
+2024-08-09 11:52:29,473 - INFO -  * Detected change in 'c:\\Users\\vishv\\OneDrive\\Documents\\AIML_2\\Project\\cal_pred_app.py', reloading
+2024-08-09 11:52:29,539 - INFO -  * Detected change in 'c:\\Users\\vishv\\OneDrive\\Documents\\AIML_2\\Project\\cal_pred_app.py', reloading
+2024-08-09 11:52:29,539 - INFO -  * Detected change in 'c:\\Users\\vishv\\OneDrive\\Documents\\AIML_2\\Project\\cal_pred_app.py', reloading
+2024-08-09 11:52:30,750 - INFO -  * Restarting with watchdog (windowsapi)

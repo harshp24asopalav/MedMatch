@@ -1,0 +1,252 @@
+2024-08-09 11:46:11,129 - INFO - Model saved successfully.
+2024-08-09 11:46:11,194 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 11:46:11,194 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-09 11:46:11,202 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 11:46:13,037 - INFO - Model saved successfully.
+2024-08-09 11:46:13,070 - WARNING -  * Debugger is active!
+2024-08-09 11:46:13,070 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 11:46:42,858 - INFO - API call: /load_data
+2024-08-09 11:46:42,868 - INFO - 127.0.0.1 - - [09/Aug/2024 11:46:42] "POST /bs/load_data HTTP/1.1" 200 -
+2024-08-09 11:46:49,118 - INFO - API call: /process_data
+2024-08-09 11:46:49,138 - INFO - 127.0.0.1 - - [09/Aug/2024 11:46:49] "POST /bs/process_data HTTP/1.1" 200 -
+2024-08-09 11:46:56,062 - INFO - API call: /model
+2024-08-09 11:46:56,068 - INFO - 127.0.0.1 - - [09/Aug/2024 11:46:56] "POST /bs/model HTTP/1.1" 200 -
+2024-08-09 11:47:02,006 - INFO - API call: /train_model
+2024-08-09 11:47:02,608 - INFO - 127.0.0.1 - - [09/Aug/2024 11:47:02] "POST /bs/train_model HTTP/1.1" 200 -
+2024-08-09 11:47:11,366 - INFO - API call: /save_model
+2024-08-09 11:47:11,423 - INFO - Model saved successfully.
+2024-08-09 11:47:11,428 - INFO - 127.0.0.1 - - [09/Aug/2024 11:47:11] "POST /bs/save_model HTTP/1.1" 200 -
+2024-08-09 11:47:19,134 - INFO - API call: /evaluate
+2024-08-09 11:47:19,178 - INFO - 127.0.0.1 - - [09/Aug/2024 11:47:19] "POST /bs/evaluate HTTP/1.1" 200 -
+2024-08-09 11:53:14,196 - INFO - Model loaded successfully.
+2024-08-09 11:53:14,527 - INFO - Model loaded successfully.
+2024-08-09 11:53:14,579 - INFO - Model loaded successfully.
+2024-08-09 11:53:14,591 - INFO - Model loaded successfully.
+2024-08-09 11:53:15,278 - INFO - Use pytorch device_name: cpu
+2024-08-09 11:53:15,278 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 11:53:16,961 - INFO - Model loaded successfully.
+2024-08-09 11:53:16,961 - INFO - Starting application
+2024-08-09 11:53:16,978 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 11:53:16,978 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-09 11:53:16,986 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 11:53:25,675 - INFO - Model loaded successfully.
+2024-08-09 11:53:25,958 - INFO - Model loaded successfully.
+2024-08-09 11:53:25,958 - INFO - Model loaded successfully.
+2024-08-09 11:53:25,965 - INFO - Model loaded successfully.
+2024-08-09 11:53:26,377 - INFO - Use pytorch device_name: cpu
+2024-08-09 11:53:26,377 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 11:53:27,723 - INFO - Model loaded successfully.
+2024-08-09 11:53:27,723 - INFO - Starting application
+2024-08-09 11:53:27,739 - WARNING -  * Debugger is active!
+2024-08-09 11:53:27,739 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 11:53:29,128 - INFO - API call: /is_diabetes
+2024-08-09 11:53:29,170 - INFO - 127.0.0.1 - - [09/Aug/2024 11:53:29] "POST /api/is_diabetes HTTP/1.1" 200 -
+2024-08-09 11:53:36,319 - INFO - API call: /is_diabetes
+2024-08-09 11:53:36,334 - INFO - 127.0.0.1 - - [09/Aug/2024 11:53:36] "POST /api/is_diabetes HTTP/1.1" 200 -
+2024-08-09 11:53:40,668 - INFO - API call: /is_heart
+2024-08-09 11:53:40,732 - INFO - 127.0.0.1 - - [09/Aug/2024 11:53:40] "POST /api/is_heart HTTP/1.1" 200 -
+2024-08-09 11:53:52,287 - INFO - API call: /get_answer
+2024-08-09 11:53:52,349 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\_dynamo\\config.py', reloading
+2024-08-09 11:53:52,417 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\_functorch\\config.py', reloading
+2024-08-09 11:53:52,433 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\_inductor\\test_operators.py', reloading
+2024-08-09 11:53:52,789 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\_inductor\\config.py', reloading
+2024-08-09 11:53:55,607 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 11:54:03,973 - INFO - Model loaded successfully.
+2024-08-09 11:54:04,247 - INFO - Model loaded successfully.
+2024-08-09 11:54:04,250 - INFO - Model loaded successfully.
+2024-08-09 11:54:04,251 - INFO - Model loaded successfully.
+2024-08-09 11:54:04,634 - INFO - Use pytorch device_name: cpu
+2024-08-09 11:54:04,634 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 11:54:06,020 - INFO - Model loaded successfully.
+2024-08-09 11:54:06,021 - INFO - Starting application
+2024-08-09 11:54:06,031 - WARNING -  * Debugger is active!
+2024-08-09 11:54:06,034 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 11:54:06,236 - INFO - API call: /get_answer
+2024-08-09 11:54:06,626 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\distributed\\_functional_collectives.py', reloading
+2024-08-09 11:54:06,899 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\_library\\abstract_impl.py', reloading
+2024-08-09 11:54:07,069 - INFO -  * Detected change in 'C:\\Users\\vishv\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\contextlib.py', reloading
+2024-08-09 11:54:07,230 - INFO - 127.0.0.1 - - [09/Aug/2024 11:54:07] "POST /api/get_answer HTTP/1.1" 200 -
+2024-08-09 11:54:09,775 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 11:54:17,406 - INFO - Model loaded successfully.
+2024-08-09 11:54:17,663 - INFO - Model loaded successfully.
+2024-08-09 11:54:17,663 - INFO - Model loaded successfully.
+2024-08-09 11:54:17,663 - INFO - Model loaded successfully.
+2024-08-09 11:54:18,000 - INFO - Use pytorch device_name: cpu
+2024-08-09 11:54:18,000 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 11:54:19,387 - INFO - Model loaded successfully.
+2024-08-09 11:54:19,387 - INFO - Starting application
+2024-08-09 11:54:19,395 - WARNING -  * Debugger is active!
+2024-08-09 11:54:19,395 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 11:54:19,595 - INFO - API call: /calorie_maintenance
+2024-08-09 11:54:19,606 - INFO - 127.0.0.1 - - [09/Aug/2024 11:54:19] "POST /api/calorie_maintenance HTTP/1.1" 200 -
+2024-08-09 11:56:33,898 - INFO - Application shutdown
+2024-08-09 11:56:36,131 - INFO - Application shutdown
+2024-08-09 12:12:46,818 - INFO - Model loaded successfully.
+2024-08-09 12:12:47,054 - INFO - Model loaded successfully.
+2024-08-09 12:12:47,054 - INFO - Model loaded successfully.
+2024-08-09 12:12:47,055 - INFO - Model loaded successfully.
+2024-08-09 12:12:47,385 - INFO - Use pytorch device_name: cpu
+2024-08-09 12:12:47,385 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 12:12:48,642 - INFO - Model loaded successfully.
+2024-08-09 12:12:48,659 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 12:12:48,659 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-09 12:12:48,667 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 12:12:56,644 - INFO - Model loaded successfully.
+2024-08-09 12:12:56,916 - INFO - Model loaded successfully.
+2024-08-09 12:12:56,916 - INFO - Model loaded successfully.
+2024-08-09 12:12:56,916 - INFO - Model loaded successfully.
+2024-08-09 12:12:57,293 - INFO - Use pytorch device_name: cpu
+2024-08-09 12:12:57,293 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 12:12:58,966 - INFO - Model loaded successfully.
+2024-08-09 12:12:58,983 - WARNING -  * Debugger is active!
+2024-08-09 12:12:58,983 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 12:13:25,927 - INFO - 127.0.0.1 - - [09/Aug/2024 12:13:25] "POST /api/get_answer HTTP/1.1" 200 -
+2024-08-09 12:13:42,671 - INFO - 127.0.0.1 - - [09/Aug/2024 12:13:42] "POST /api/get_answer HTTP/1.1" 200 -
+2024-08-09 12:13:52,771 - INFO - 127.0.0.1 - - [09/Aug/2024 12:13:52] "POST /api/calorie_maintenance HTTP/1.1" 200 -
+2024-08-09 12:13:57,845 - INFO - 127.0.0.1 - - [09/Aug/2024 12:13:57] "POST /api/is_heart HTTP/1.1" 200 -
+2024-08-09 12:14:01,292 - INFO - 127.0.0.1 - - [09/Aug/2024 12:14:01] "POST /api/is_diabetes HTTP/1.1" 200 -
+2024-08-09 12:14:06,161 - INFO - 127.0.0.1 - - [09/Aug/2024 12:14:06] "POST /api/is_stroke HTTP/1.1" 200 -
+2024-08-09 12:14:11,021 - INFO - 127.0.0.1 - - [09/Aug/2024 12:14:11] "POST /api/is_kidney HTTP/1.1" 200 -
+2024-08-09 12:14:29,324 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\keras\\engine\\training.py', reloading
+2024-08-09 12:14:29,607 - INFO - 127.0.0.1 - - [09/Aug/2024 12:14:29] "POST /api/is_lung HTTP/1.1" 200 -
+2024-08-09 12:14:31,955 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 12:14:40,059 - INFO - Model loaded successfully.
+2024-08-09 12:14:40,315 - INFO - Model loaded successfully.
+2024-08-09 12:14:40,348 - INFO - Model loaded successfully.
+2024-08-09 12:14:40,348 - INFO - Model loaded successfully.
+2024-08-09 12:14:40,709 - INFO - Use pytorch device_name: cpu
+2024-08-09 12:14:40,709 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 12:14:41,918 - INFO - Model loaded successfully.
+2024-08-09 12:14:41,932 - WARNING -  * Debugger is active!
+2024-08-09 12:14:41,934 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 12:14:46,789 - INFO - 127.0.0.1 - - [09/Aug/2024 12:14:46] "POST /api/is_lung HTTP/1.1" 200 -
+2024-08-09 12:15:04,412 - INFO - 127.0.0.1 - - [09/Aug/2024 12:15:04] "POST /api/is_tumor HTTP/1.1" 200 -
+2024-08-09 12:26:17,183 - INFO - Model loaded successfully.
+2024-08-09 12:26:17,414 - INFO - Model loaded successfully.
+2024-08-09 12:26:17,418 - INFO - Model loaded successfully.
+2024-08-09 12:26:17,418 - INFO - Model loaded successfully.
+2024-08-09 12:26:17,748 - INFO - Use pytorch device_name: cpu
+2024-08-09 12:26:17,748 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 12:26:19,045 - INFO - Model loaded successfully.
+2024-08-09 12:26:19,061 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 12:26:19,061 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-09 12:26:19,070 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 12:26:26,967 - INFO - Model loaded successfully.
+2024-08-09 12:26:27,252 - INFO - Model loaded successfully.
+2024-08-09 12:26:27,252 - INFO - Model loaded successfully.
+2024-08-09 12:26:27,252 - INFO - Model loaded successfully.
+2024-08-09 12:26:27,683 - INFO - Use pytorch device_name: cpu
+2024-08-09 12:26:27,683 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 12:26:28,841 - INFO - Model loaded successfully.
+2024-08-09 12:26:28,850 - WARNING -  * Debugger is active!
+2024-08-09 12:26:28,850 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 12:26:40,473 - INFO - 127.0.0.1 - - [09/Aug/2024 12:26:40] "POST /api/get_answer HTTP/1.1" 200 -
+2024-08-09 12:26:45,095 - INFO - 127.0.0.1 - - [09/Aug/2024 12:26:45] "POST /api/calorie_maintenance HTTP/1.1" 200 -
+2024-08-09 12:26:49,436 - INFO - 127.0.0.1 - - [09/Aug/2024 12:26:49] "POST /api/is_heart HTTP/1.1" 200 -
+2024-08-09 12:26:54,127 - INFO - 127.0.0.1 - - [09/Aug/2024 12:26:54] "POST /api/is_stroke HTTP/1.1" 200 -
+2024-08-09 12:26:59,212 - INFO - 127.0.0.1 - - [09/Aug/2024 12:26:59] "POST /api/is_diabetes HTTP/1.1" 200 -
+2024-08-09 13:05:38,647 - INFO - Model loaded successfully.
+2024-08-09 13:05:38,895 - INFO - Model loaded successfully.
+2024-08-09 13:05:38,895 - INFO - Model loaded successfully.
+2024-08-09 13:05:38,895 - INFO - Model loaded successfully.
+2024-08-09 13:05:39,234 - INFO - Use pytorch device_name: cpu
+2024-08-09 13:05:39,234 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 13:05:40,660 - INFO - Model loaded successfully.
+2024-08-09 13:05:40,682 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 13:05:40,682 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-09 13:05:40,693 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 13:05:49,045 - INFO - Model loaded successfully.
+2024-08-09 13:05:49,377 - INFO - Model loaded successfully.
+2024-08-09 13:05:49,377 - INFO - Model loaded successfully.
+2024-08-09 13:05:49,377 - INFO - Model loaded successfully.
+2024-08-09 13:05:49,806 - INFO - Use pytorch device_name: cpu
+2024-08-09 13:05:49,806 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 13:05:51,952 - INFO - Model loaded successfully.
+2024-08-09 13:05:51,960 - WARNING -  * Debugger is active!
+2024-08-09 13:05:51,968 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 13:05:52,218 - INFO -  * Detected change in 'c:\\Users\\vishv\\OneDrive\\Documents\\AIML_2\\Project\\frontend\\interface.py', reloading
+2024-08-09 13:05:52,942 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\streamlit\\env_util.py', reloading
+2024-08-09 13:05:52,944 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\streamlit\\runtime\\scriptrunner\\script_runner.py', reloading
+2024-08-09 13:05:52,948 - INFO -  * Detected change in 'C:\\Users\\vishv\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\threading.py', reloading
+2024-08-09 13:05:54,704 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 13:06:04,477 - INFO - Model loaded successfully.
+2024-08-09 13:06:04,842 - INFO - Model loaded successfully.
+2024-08-09 13:06:04,842 - INFO - Model loaded successfully.
+2024-08-09 13:06:04,842 - INFO - Model loaded successfully.
+2024-08-09 13:06:05,360 - INFO - Use pytorch device_name: cpu
+2024-08-09 13:06:05,364 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 13:06:06,490 - INFO - Model loaded successfully.
+2024-08-09 13:06:06,524 - WARNING -  * Debugger is active!
+2024-08-09 13:06:06,524 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 13:06:06,815 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\_dynamo\\config.py', reloading
+2024-08-09 13:06:06,862 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\_functorch\\config.py', reloading
+2024-08-09 13:06:06,874 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\_inductor\\test_operators.py', reloading
+2024-08-09 13:06:07,178 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\_inductor\\config.py', reloading
+2024-08-09 13:06:07,260 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\distributed\\_functional_collectives.py', reloading
+2024-08-09 13:06:07,528 - INFO -  * Detected change in 'C:\\Users\\vishv\\OneDrive\\Documents\\AIML\\ML_Framework\\CSCN8010-Mycopy\\venv\\tensorflow_cpu\\Lib\\site-packages\\torch\\_library\\abstract_impl.py', reloading
+2024-08-09 13:06:07,682 - INFO -  * Detected change in 'C:\\Users\\vishv\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\contextlib.py', reloading
+2024-08-09 13:06:07,834 - INFO - 127.0.0.1 - - [09/Aug/2024 13:06:07] "POST /api/get_answer HTTP/1.1" 200 -
+2024-08-09 13:06:09,804 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 13:06:17,465 - INFO - Model loaded successfully.
+2024-08-09 13:06:17,715 - INFO - Model loaded successfully.
+2024-08-09 13:06:17,715 - INFO - Model loaded successfully.
+2024-08-09 13:06:17,715 - INFO - Model loaded successfully.
+2024-08-09 13:06:18,062 - INFO - Use pytorch device_name: cpu
+2024-08-09 13:06:18,062 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 13:06:19,263 - INFO - Model loaded successfully.
+2024-08-09 13:06:19,271 - WARNING -  * Debugger is active!
+2024-08-09 13:06:19,271 - INFO -  * Debugger PIN: 348-548-431
+2024-08-09 13:06:19,540 - INFO - 127.0.0.1 - - [09/Aug/2024 13:06:19] "POST /api/calorie_maintenance HTTP/1.1" 200 -
+2024-08-09 13:06:26,873 - INFO - 127.0.0.1 - - [09/Aug/2024 13:06:26] "POST /api/is_diabetes HTTP/1.1" 200 -
+2024-08-09 17:16:18,059 - INFO - Model loaded successfully.
+2024-08-09 17:16:18,073 - INFO - Model loaded successfully.
+2024-08-09 17:16:18,076 - INFO - Model loaded successfully.
+2024-08-09 17:16:18,085 - INFO - Model loaded successfully.
+2024-08-09 17:16:19,760 - INFO - Use pytorch device_name: cpu
+2024-08-09 17:16:19,760 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 17:16:24,810 - INFO - Model loaded successfully.
+2024-08-09 17:16:24,825 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 17:16:24,825 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-09 17:16:24,828 - INFO -  * Restarting with watchdog (inotify)
+2024-08-09 17:16:33,139 - INFO - Model loaded successfully.
+2024-08-09 17:16:33,150 - INFO - Model loaded successfully.
+2024-08-09 17:16:33,152 - INFO - Model loaded successfully.
+2024-08-09 17:16:33,158 - INFO - Model loaded successfully.
+2024-08-09 17:16:34,567 - INFO - Use pytorch device_name: cpu
+2024-08-09 17:16:34,567 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 17:16:36,040 - INFO - Model loaded successfully.
+2024-08-09 17:16:36,051 - WARNING -  * Debugger is active!
+2024-08-09 17:16:36,054 - INFO -  * Debugger PIN: 116-389-774
+2024-08-09 17:16:36,842 - INFO - 127.0.0.1 - - [09/Aug/2024 17:16:36] "POST /api/is_heart HTTP/1.1" 200 -
+2024-08-09 17:16:46,509 - INFO - 127.0.0.1 - - [09/Aug/2024 17:16:46] "POST /api/get_answer HTTP/1.1" 200 -
+2024-08-09 17:16:52,125 - INFO - 127.0.0.1 - - [09/Aug/2024 17:16:52] "POST /api/calorie_maintenance HTTP/1.1" 200 -
+2024-08-09 15:11:26,036 - INFO - Model loaded successfully.
+2024-08-09 15:11:34,095 - INFO - Model loaded successfully.
+2024-08-09 15:11:34,168 - INFO - Model loaded successfully.
+2024-08-09 15:11:34,208 - INFO - Model loaded successfully.
+2024-08-09 15:11:39,858 - INFO - Use pytorch device_name: cpu
+2024-08-09 15:11:39,858 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 15:11:57,329 - INFO - Model loaded successfully.
+2024-08-09 15:11:58,292 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-09 15:11:58,292 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-09 15:11:58,542 - INFO -  * Restarting with watchdog (windowsapi)
+2024-08-09 15:13:19,969 - INFO - Model loaded successfully.
+2024-08-09 15:13:20,026 - INFO - Model loaded successfully.
+2024-08-09 15:13:20,051 - INFO - Model loaded successfully.
+2024-08-09 15:13:20,068 - INFO - Model loaded successfully.
+2024-08-09 15:13:32,298 - INFO - Use pytorch device_name: cpu
+2024-08-09 15:13:32,298 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-08-09 15:13:41,049 - INFO - Model loaded successfully.
+2024-08-09 15:13:41,297 - WARNING -  * Debugger is active!
+2024-08-09 15:13:41,314 - INFO -  * Debugger PIN: 103-595-274
+2024-08-09 15:13:59,562 - INFO - 127.0.0.1 - - [09/Aug/2024 15:13:59] "POST /api/calorie_maintenance HTTP/1.1" 200 -
+2024-08-09 15:15:51,701 - INFO -  * Detected change in 'f:\\AAIML\\MedMatch\\QAChatbot.py', reloading
+2024-08-09 15:15:51,701 - INFO -  * Detected change in 'f:\\AAIML\\MedMatch\\QAChatbot.py', reloading
+2024-08-09 15:15:51,701 - INFO -  * Detected change in 'f:\\AAIML\\MedMatch\\QAChatbot.py', reloading
