@@ -1,0 +1,31 @@
+title = "gitleaks config"
+
+[[rules]]
+description = "API Key"
+regex = '''[aA][pP][iI]_?[kK]ey\s*=\s*[0-9a-zA-Z]+'''
+tags = ["key"]
+
+[[rules]]
+description = "Sensitive Environment Variable"
+regex = '''(?i)(SECRET|PASSWORD|TOKEN|KEY)=[a-zA-Z0-9._%+-]{8,}'''
+tags = ["env", "credentials"]
+
+[[rules]]
+description = "Sensitive Model Path"
+regex = '''/models/(?:[a-zA-Z0-9._%+-]+)'''
+tags = ["model", "path"]
+
+[[rules]]
+description = "Model File (.h5)"
+regex = '''[a-zA-Z0-9._-]+\.h5'''
+tags = ["model", "file"]
+
+[[rules]]
+description = "Python Pickle File (.pkl)"
+regex = '''[a-zA-Z0-9._-]+\.pkl'''
+tags = ["model", "file"]
+
+[[rules]]
+description = "Sensitive YAML File (.yml or .yaml)"
+regex = '''[a-zA-Z0-9._-]+\.ya?ml'''
+tags = ["yaml", "file"]
