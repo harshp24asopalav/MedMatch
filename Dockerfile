@@ -11,6 +11,9 @@ COPY . /app
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
+# Create logs directory
+RUN mkdir -p /app/logs
+
 # Expose the ports for Flask (5000) and Streamlit (8501)
 EXPOSE 5000
 EXPOSE 8501

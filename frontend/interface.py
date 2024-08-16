@@ -6,7 +6,7 @@ import logging
 
 # Setup logging
 logging.basicConfig(
-        filename='app_logs.log',  # Name of the log file
+        filename='/app/logs/app_logs.log',  # Name of the log file
         filemode='a',
         level=logging.INFO,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -16,16 +16,6 @@ logger = logging.getLogger(__name__)
 
 # Log application start-up
 logger.info("Starting application")
-
-
-# Helper function for CSS
-# def local_css(file_name):
-#     with open(file_name, "r") as f:
-#         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-#     logger.info("C:\Users/vishv\OneDrive\Documents\AIML_2\Project/frontend\style.css")
-
-# # CSS for the chat icon
-# local_css("style1.css")  # CSS for styling
 
 # Define the endpoints for the different disease prediction APIs
 API_URLS = {
@@ -60,6 +50,7 @@ if disease_option == "Select a model":
         if st.button("Get Answer", key='get_answer'):
             if user_question:
                 response = requests.post("http://127.0.0.1:5000/api/get_answer", json={"question": user_question})
+                logger.info(f"Chatbot API Response status: {response.status_code}")
                 if response.status_code == 200:
                     answers = response.json()['answers']
                     for answer in answers:
@@ -92,6 +83,8 @@ if disease_option == "Select a model":
                 "activity_level": activity_level
             }
             response = requests.post("http://127.0.0.1:5000/api/calorie_maintenance", json=input_data)
+            logger.info(f"Calorie API response status: {response.status_code}")
+
             if response.status_code == 200:
                 calorie_maintenance_level = response.json()['Calorie Maintenance Level']
                 st.success(f"The estimated calories to maintain weight are: {calorie_maintenance_level}")
@@ -139,6 +132,7 @@ if disease_option != "Select a model": # Check if a disease model is selected
 
             # Make a POST request to the selected API
             response = requests.post(API_URLS[disease_option], json=input_data)
+            logger.info(f"Heart Failure API response status: {response.status_code}")
 
             if response.status_code == 200:
                 result = response.json()
@@ -178,6 +172,7 @@ if disease_option != "Select a model": # Check if a disease model is selected
 
             # Make a POST request to the selected API
             response = requests.post(API_URLS[disease_option], json=input_data)
+            logger.info(f"Diabetes API response status: {response.status_code}")
 
             if response.status_code == 200:
                 result = response.json()
@@ -233,6 +228,7 @@ if disease_option != "Select a model": # Check if a disease model is selected
             }
             # Make a POST request to the selected API
             response = requests.post(API_URLS[disease_option], json=input_data)
+            logger.info(f"Brain Stroke API response status: {response.status_code}")
 
             if response.status_code == 200:
                 result = response.json()
@@ -269,6 +265,7 @@ if disease_option != "Select a model": # Check if a disease model is selected
             }
             # Make a POST request to the selected API
             response = requests.post(API_URLS[disease_option], json=input_data)
+            logger.info(f"Kidney Disease API response status: {response.status_code}")
 
             if response.status_code == 200:
                 result = response.json()
@@ -300,6 +297,7 @@ if disease_option != "Select a model": # Check if a disease model is selected
                 url = API_URLS["Lung Cancer"]
                 files = {'file': open(temp_file_path, 'rb')}
                 response = requests.post(url, files=files)
+                logger.info(f"Lung Cancer API response status: {response.status_code}")
                 
                 # Handle the response
                 if response.status_code == 200:
@@ -338,6 +336,7 @@ if disease_option != "Select a model": # Check if a disease model is selected
                 url = API_URLS["Brain Tumor"]
                 files = {'image': open(temp_file_path, 'rb')}
                 response = requests.post(url, files=files)
+                logger.info(f"Brain Tumor API response status: {response.status_code}")
                 
                 # Handle the response
                 if response.status_code == 200:
